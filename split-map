@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Check version of the splitter to use
+SPLITTER=`ls -d splitter-r*zip|tail -1|cut -d '.' -f1`
+
+# Check if ZIP file is unpacked
+if [ ! -f $SPLITTER/splitter.jar ]; then
+ echo Unpacking $SPLITTER
+ unzip -q $SPLITTER
+fi
+
+# Determine what .pbf file to use, choosing largest file unless specified on command line
+if [ -z "$PBF" ]; then
+ PBF=`ls -S *pbf|head -1`
+fi
+
+# Check if there is a polygon file specified on the command line and use it (default none)
+if [ -n "$POLY" ]; then
+ POLY=--polygon-file=$POLY
+fi
+
+echo PBF in use: $PBF
+echo Extra parameters: $POLY
+
+#java -Xmx4G  -jar $SPLITTER/splitter.jar --geonames-file=cities15000.zip --description="(c) OpenStreetMap contributors" --precomp-sea=sea-latest.zip --output-dir=output-splitter $POLY $PBF

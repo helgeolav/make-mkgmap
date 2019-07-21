@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#Check version of mkgmap to use
+MKGMAP=`ls -d mkgmap-r*zip|tail -1|cut -d '.' -f1`
+
+#Check if ZIP file is unpacked
+if [ ! -f $MKGMAP/mkgmap.jar ]; then
+ echo Unpacking $MKGMAP
+ unzip -q $MKGMAP
+fi
+
+java -Xmx8G -jar $MKGMAP/mkgmap.jar -c mkgmap.args
