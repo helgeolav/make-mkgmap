@@ -1,0 +1,19 @@
+housenumbers
+#gmapi
+code-page=1252
+read-config=mkgmap.bounds
+add-pois-to-areas
+gmapsupp
+route
+#location-autofill=is_in,nearest
+output-dir=output-map
+copyright-message="(c) OpenStreetMap contributors"
+make-poi-index
+process-destination
+process-exits
+index
+remove-ovm-work-files=true
+tdbfile
+verbose
+link-pois-to-ways
+read-config=output-splitter/template.args
