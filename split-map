@@ -22,4 +22,4 @@ fi
 echo PBF in use: $PBF
 echo Extra parameters: $POLY
 
-#java -Xmx4G  -jar $SPLITTER/splitter.jar --geonames-file=cities15000.zip --description="(c) OpenStreetMap contributors" --precomp-sea=sea-latest.zip --output-dir=output-splitter $POLY $PBF
+java -Xmx4G  -jar $SPLITTER/splitter.jar --geonames-file=cities15000.zip --description="(c) OpenStreetMap contributors" --precomp-sea=sea-latest.zip --output-dir=output-splitter $POLY $PBF

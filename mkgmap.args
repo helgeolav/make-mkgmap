@@ -5,7 +5,7 @@ read-config=mkgmap.bounds
 add-pois-to-areas
 gmapsupp
 route
-#location-autofill=is_in,nearest
+location-autofill=is_in,nearest
 output-dir=output-map
 copyright-message="(c) OpenStreetMap contributors"
 make-poi-index
